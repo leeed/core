@@ -182,6 +182,21 @@ class BaseSale implements DocumentInterface
     /**
      * @return string
      */
+
+    /**
+     * @var PaymentTerms|null
+     */
+    protected $formaPago;
+
+    /**
+     * @var Cuota[]|null
+     */
+    protected $cuotas;
+
+    /**
+     * @return PaymentTerms|null
+     */
+
     public function getTipoDoc()
     {
         return $this->tipoDoc;
@@ -818,5 +833,38 @@ class BaseSale implements DocumentInterface
         ];
 
         return join('-', $parts);
+    }
+
+    public function getFormaPago()
+    {
+        return $this->formaPago;
+    }
+
+    /**
+     * @param PaymentTerms|null $formaPago
+     * @return $this
+     */
+    public function setFormaPago($formaPago)
+    {
+        $this->formaPago = $formaPago;
+        return $this;
+    }
+
+    /**
+     * @return Cuota[]|null
+     */
+    public function getCuotas()
+    {
+        return $this->cuotas;
+    }
+
+    /**
+     * @param Cuota[]|null $cuotas
+     * @return $this
+     */
+    public function setCuotas($cuotas)
+    {
+        $this->cuotas = $cuotas;
+        return $this;
     }
 }
