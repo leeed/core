@@ -16,6 +16,7 @@ use Greenter\Model\Company\Address;
  *
  * Class Invoice.
  */
+//Custom
 class Invoice extends BaseSale
 {
     /**
